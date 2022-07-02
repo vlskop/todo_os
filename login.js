@@ -15,10 +15,12 @@ enterButton.addEventListener('click', () => {
 });
 
 // Кнопка продолжить неактивна без имени пользователя
-userName.value.onchange = function(evt) {
-    evt.preventDefault();
+userName.value.onchange = () => {
     if (userName.value != "") {
         loginButton.disabled = false;
+    }
+    else {
+        loginButton.disabled = true;  
     }
 };
 
@@ -32,7 +34,7 @@ loginButton.addEventListener('click', () => {
 })
 // Вход по нажатию ENTER
 loginForm.addEventListener('keydown', (evt) => {
-    if (evt.keyCode === 13 && userName.value != "") {
+    if (evt.keyCode === 13) {
         greetingsName.textContent = userName.value + ',';
         localStorage.setItem('name', userName.value);
         loginForm.classList.add('hidden');
@@ -44,9 +46,9 @@ loginForm.addEventListener('keydown', (evt) => {
 // Показ имени в кнопке входа и приветствии при загрузке 
 // (для local storage)
 window.addEventListener('load', () => {
-    if (localStorage.getItem('name') === null) {
+    if (localStorage.getItem('name') === "" || localStorage.getItem('name') === null) {
         greetingsName.textContent = '';
-        enterButton.textContent = Войти;
+        enterButton.textContent = 'Войти';
     }
      else {
         greetingsName.textContent = localStorage.getItem('name') + ',';
