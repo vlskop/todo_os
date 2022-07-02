@@ -11,19 +11,25 @@
 </head>
 
 <body>
+
     <!-- ЗАГРУЗОЧНЫЙ ЭКРАН -->
     <div class='loading-screen'>
         <div class="loading-anim"></div>
     </div>
 
+
     <!--ЭКРАН БЛОКИРОВКИ-->
-    <main class="main hidden">
+    <main class="main">
+
+        <!--ФОРМА ВХОДА-->
         <button type="submit" id="login-btn">Войти</button>
         <form class="login-form hidden">
             <p style="color:white">Ваше имя:</p>
             <input type="text" id="login-name" value="" required>
             <button type="submit" id="login-submit" disabled>Продолжить</button>
         </form>
+
+        <!--ЧАСЫ-->
         <div class="clock">
             <ul class="time">
                 <li id="hours">00</li>
@@ -39,11 +45,15 @@
                 <li id="year"></li>
             </ul>
         </div>
+
+        <!--ПРИВЕТСТВИЕ-->
         <div class="greetings">
             <span>Привет,</span>
             <span class="name" contenteditable="true"></span>
             <span> чем планируешь заняться сегодня?</span>
         </div>
+
+        <!--ПОГОДА-->
         <div class="weather">
             <p class="location">Location</p>
             <img class="weather-icon" src="" alt="">
@@ -59,14 +69,21 @@
             <img src="arrow-down-solid.svg" class="arrow-down jump">
         </div>
     </main>
+
+
+    <!--РАБОЧЕЕ ПРОСТРАНСТВО-->
     <div class="workflow-container hidden">
         <button type="submit" class="go-up">К начальному экрану</button>
     </div>
+
+
+    <!--СКРИПТЫ-->
     <script src="datetime.js"></script>
     <script src="weather.js"></script>
     <script src="loading.js"></script>
     <script src="login.js"></script>
     <script src="scrolling.js"></script>
+
 </body>
 
 </html>

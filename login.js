@@ -1,8 +1,9 @@
-let enterButton = document.querySelector('#login-btn');
-let loginForm = document.querySelector('.login-form');
-let loginButton = document.querySelector('#login-submit');
-let userName = document.querySelector('#login-name');
-let greetingsName = document.querySelector('.name');
+let enterButton = document.querySelector('#login-btn'); // Кнопка "Войти"
+let loginForm = document.querySelector('.login-form'); // Окошко входа
+let loginButton = document.querySelector('#login-submit'); // Кнопка "Продолжить"
+let userName = document.querySelector('#login-name'); //Область ввода имени
+let greetingsName = document.querySelector('.name'); // Имя пользователя после "Привет," под часами
+
 // Работа кнопки войти
 enterButton.addEventListener('click', () => {
     if (loginForm.classList.contains('hidden')) {

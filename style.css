@@ -11,7 +11,9 @@
 
 .hidden {
     display: none;
+    opacity: 0;
 }
+
 
 /* ЗАГРУЗКА СТРАНИЦЫ*/
 .loading-screen {
@@ -64,6 +66,16 @@
 @keyframes appear {
     to {opacity: 1;}
 }
+
+.disappear {
+    animation: disappear 1.5s ease-in-out forwards;
+    opacity: 1;
+}
+
+@keyframes disappear {
+    to {opacity: 0;}
+}
+
 /* ФОРМА ВХОДА */
 #login-btn{
 border: none;
@@ -116,6 +128,8 @@ transition: 0.2s;
     padding: 5px; 
 
 }
+
+
 /* ЧАСЫ */
 .main {
     height: 100vh;
@@ -151,6 +165,7 @@ transition: 0.2s;
     font-size: 22px;
 }
 
+
 /* ПРИВЕТСТВИЕ */
 
 .greetings {
@@ -169,6 +184,7 @@ font-size: 20px;
 width: 100px;
 }
 
+
 /* ПОГОДА */
 
 .weather {
@@ -181,6 +197,7 @@ width: 100px;
     font-size: 20px;
     filter: drop-shadow(0px 0 2px rgba(0, 0, 0, 0.856));
 }
+
 
 /* ФУТЕР */
 
@@ -225,6 +242,7 @@ filter: invert(1) drop-shadow(0px 0 2px rgba(0, 0, 0, 0.856));
     50% {transform: translateY(3px);}
 }
 
+/* РАБОЧЕЕ ПРОСТРАНСТВО */
 .workflow-container {
     height: 100vh;
     background-color: #fff;
