@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
           location.textContent = data.name;
           temperature.textContent = Math.round(data.main.temp) + '°';
           let iconCode = data.weather[0].icon;
-          icon.src = `/weather-icons/${iconCode}@2x.png`;
+          icon.src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
         });
     });
   }
