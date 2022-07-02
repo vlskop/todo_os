@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* ОБЩИЕ НАСТРОЙКИ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ЗАГРУЗКА СТРАНИЦЫ*/
+.loading-screen {
+    height: 100vh;
+}
+
+.loading-screen {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    padding-top: 150px;
+    background-image: url(main-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.loading-anim {
+    animation: loading 3s infinite ease-in-out;
+    animation-iteration-count: infinite 1;
+    animation-fill-mode: forwards;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    margin: 25% auto;
+    border: 2px solid white;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    border-radius: 50%;
+}
+
+@keyframes loading {
+    0% {background-color: transparent;}
+    50% {background-color: rgba(255, 255, 255, 0.37);}
+    to {transform: rotate(360deg);
+        background-color: transparent;           
+}
+}
+
+.appear {
+    animation: appear 1.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes appear {
+    to {opacity: 1;}
+}
+/* ФОРМА ВХОДА */
+#login-btn{
+border: none;
+position: absolute;
+top: 20px;
+right: 30px;
+padding: 10x;
+background-color: transparent;
+font-size: 18px;
+color: white;
+filter: drop-shadow(0px 0 2px rgba(0, 0, 0, 0.856));
+transition: 0.2s;
+}
+
+#login-btn:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0px 0 5px rgba(0, 0, 0, 0.856));
+}
+
+#login-btn:active {
+    transform: scale(1);
+  }
+
+.login-form {
+    width: 200px;
+    height: 120px;
+    position: absolute;
+    right: 30px;
+    top: 45px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    padding: 15px;
+}  
+
+#login-name {
+    border: none;
+    border-radius: 5px;
+    width: 170px;
+    padding-left: 5px;
+    height: 25px;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+#login-submit {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 5px;
+    padding: 5px; 
+
+}
+/* ЧАСЫ */
+.main {
+    height: 100vh;
+    background-image: url(main-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding-top: 150px;
+}
+
+.clock {
+    margin: auto;
+    width: 400px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    filter: drop-shadow(0px 0 2px rgba(0, 0, 0, 0.856));
+}
+
+.clock ul {
+    margin: 0 auto;
+    list-style: none;
+}
+
+.clock li {
+    display: inline;
+    font-size: 60px;
+}
+
+.date li {
+    font-size: 22px;
+}
+
+/* ПРИВЕТСТВИЕ */
+
+.greetings {
+width: fit-content;
+margin: 15px auto 0 auto;
+color: #fff;
+font-size: 20px;
+filter: drop-shadow(0px 0 2px rgba(0, 0, 0, 0.856));
+}
+
+.name {
+border: none;
+background-color: transparent;
+color: #fff;
+font-size: 20px;
+width: 100px;
+}
+
+/* ПОГОДА */
+
+.weather {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 250px;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    filter: drop-shadow(0px 0 2px rgba(0, 0, 0, 0.856));
+}
+
+/* ФУТЕР */
+
+.scroll {
+    position: absolute;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    bottom: 0;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.scroll:hover {
+    background-color: rgba(0, 0, 0, 0.7);   
+}
+
+.scroll p {
+    margin: 0 10px;
+    font-size: 18px;
+    filter: drop-shadow(0px 0 2px rgba(0, 0, 0, 0.856))
+}
+
+.arrow-down {
+width: 15px;
+filter: invert(1) drop-shadow(0px 0 2px rgba(0, 0, 0, 0.856));
+
+}
+
+.jump {
+    animation: jump 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes jump {
+    50% {transform: translateY(3px);}
+}
+
+.workflow-container {
+    height: 100vh;
+    background-color: #fff;
+}
+
+.go-up {
+    border: none;
+    padding: 5px;
+    background-color: transparent;
+    font-size: 18px;
+}

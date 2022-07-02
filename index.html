@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task OS</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ЗАГРУЗОЧНЫЙ ЭКРАН -->
+    <div class='loading-screen'>
+        <div class="loading-anim"></div>
+    </div>
+
+    <!--ЭКРАН БЛОКИРОВКИ-->
+    <main class="main hidden">
+        <button type="submit" id="login-btn">Войти</button>
+        <form class="login-form hidden">
+            <p style="color:white">Ваше имя:</p>
+            <input type="text" id="login-name" value="" required>
+            <button type="submit" id="login-submit" disabled>Продолжить</button>
+        </form>
+        <div class="clock">
+            <ul class="time">
+                <li id="hours">00</li>
+                <li id="separator">:</li>
+                <li id="minutes">00</li>
+                <li id="separator">:</li>
+                <li id="seconds">00</li>
+            </ul>
+            <ul class="date">
+                <li id="dayNo"></li><br>
+                <li id="date"></li>
+                <li id="month"></li>
+                <li id="year"></li>
+            </ul>
+        </div>
+        <div class="greetings">
+            <span>Привет,</span>
+            <span class="name" contenteditable="true"></span>
+            <span> чем планируешь заняться сегодня?</span>
+        </div>
+        <div class="weather">
+            <p class="location">Location</p>
+            <img class="weather-icon" src="" alt="">
+            <p class="temperature">Temperature</p>
+            <span>C</span>
+            <p class="weather-description hidden">Description</p>
+        </div>
+
+        <!--ФУТЕР ЭКРАНА БЛОКИРОВКИ-->
+        <div class="scroll">
+            <img src="/arrow-down-solid.svg" class="arrow-down jump">
+            <p class="jump">Нажми сюда чтобы начать работу</p>
+            <img src="/arrow-down-solid.svg" class="arrow-down jump">
+        </div>
+    </main>
+    <div class="workflow-container hidden">
+        <button type="submit" class="go-up">К начальному экрану</button>
+    </div>
+    <script src="datetime.js"></script>
+    <script src="weather.js"></script>
+    <script src="loading.js"></script>
+    <script src="login.js"></script>
+    <script src="scrolling.js"></script>
+</body>
+
+</html>

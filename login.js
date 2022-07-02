@@ -1,0 +1,54 @@
+let enterButton = document.querySelector('#login-btn');
+let loginForm = document.querySelector('.login-form');
+let loginButton = document.querySelector('#login-submit');
+let userName = document.querySelector('#login-name');
+let greetingsName = document.querySelector('.name');
+// Работа кнопки войти
+enterButton.addEventListener('click', () => {
+    if (loginForm.classList.contains('hidden')) {
+        loginForm.classList.remove('hidden');
+    } else {
+        loginForm.classList.add('hidden');
+    }
+});
+
+// Кнопка продолжить неактивна без имени пользователя
+userName.value.onchange = function(evt) {
+    evt.preventDefault();
+    if (userName.value != "") {
+        loginButton.disabled = false;
+    }
+};
+
+// Работа кнопки Продолжить
+loginButton.addEventListener('click', () => {
+    greetingsName.textContent = userName.value + ',';
+    localStorage.setItem('name', userName.value);
+    loginForm.classList.add('hidden');
+    enterButton.textContent = userName.value;
+    userName.value = '';
+})
+// Вход по нажатию ENTER
+loginForm.addEventListener('keydown', (evt) => {
+    if (evt.keyCode === 13) {
+        greetingsName.textContent = userName.value + ',';
+        localStorage.setItem('name', userName.value);
+        loginForm.classList.add('hidden');
+        enterButton.textContent = userName.value;
+        userName.value = '';
+    }
+})
+
+// Показ имени в кнопке входа и приветствии при загрузке 
+// (для local storage)
+window.addEventListener('load', () => {
+    if (localStorage.getItem('name') === null) {
+        greetingsName.textContent = '';
+        enterButton.textContent = Войти;
+    }
+     else {
+        greetingsName.textContent = localStorage.getItem('name') + ',';
+        enterButton.textContent = localStorage.getItem('name');
+    }
+})
+
