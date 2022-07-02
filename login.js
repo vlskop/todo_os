@@ -8,8 +8,9 @@ let greetingsName = document.querySelector('.name'); // Имя пользова�
 enterButton.addEventListener('click', () => {
     if (loginForm.classList.contains('hidden')) {
         loginForm.classList.remove('hidden');
+        loginForm.classList.add('appear');
     } else {
-        loginForm.classList.add('hidden');
+        loginForm.classList.add('hidden');   
     }
 });
 
@@ -31,7 +32,7 @@ loginButton.addEventListener('click', () => {
 })
 // Вход по нажатию ENTER
 loginForm.addEventListener('keydown', (evt) => {
-    if (evt.keyCode === 13) {
+    if (evt.keyCode === 13 && userName.value != "") {
         greetingsName.textContent = userName.value + ',';
         localStorage.setItem('name', userName.value);
         loginForm.classList.add('hidden');
