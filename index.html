@@ -8,6 +8,7 @@
     <title>Task OS</title>
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calendarStyle.css">
 </head>
 
 <body>
@@ -73,7 +74,41 @@
 
     <!--РАБОЧЕЕ ПРОСТРАНСТВО-->
     <div class="workflow-container hidden">
-        <button type="submit" class="go-up">К начальному экрану</button>
+        <div class="workflow-menu">
+            <ul class="workflow-apps">
+                <li class="todo-toggle menu-active">Список дел</li>
+                <li class="calc-toggle">Калькулятор</li>
+            </ul>
+            <img src="arrow-down-solid.svg" class="arrow-up go-up">
+            <div class="mini-weather">
+                <p class="location loc-mini">Location</p>
+                <p class="temperature">Temperature</p>
+                <span>C</span>
+                <img class="weather-icon" src="" alt="">
+            </div>
+        </div>
+        <div class="todo-field">
+            <p class="todo-title">Мои задачи</p>
+            <div class="active-tasks">
+                <p class="text-active">Активные</p>
+                <form method="post">
+                    <input type="text" class="task-text" placeholder="Добавьте новую задачу" required>
+                    <button type="submit" class="add-task-btn">+</button>
+                </form>
+            <div class="task-list">
+                <template id="task-template">
+                    <div class="new-task">
+                        <p class="task-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed
+                            interdum dui, in ullamcorper dolor. </p>
+                        <input type="checkbox" class="done-checkbox" id="done-checkbox">
+                        <label for="done-checkbox"></label>
+                    </div>
+                </template>
+            </div>
+            </div>
+            <div class="done-tasks"></div>
+        </div>
+        <div class="calc-field"></div>
     </div>
 
 
@@ -83,6 +118,7 @@
     <script src="loading.js"></script>
     <script src="login.js"></script>
     <script src="scrolling.js"></script>
+    <script src="tasks.js"></script>
 
 </body>
 

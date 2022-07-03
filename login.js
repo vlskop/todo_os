@@ -31,7 +31,7 @@ loginButton.addEventListener('click', () => {
     loginForm.classList.add('hidden');
     enterButton.textContent = userName.value;
     userName.value = '';
-})
+});
 // Вход по нажатию ENTER
 loginForm.addEventListener('keydown', (evt) => {
     if (evt.keyCode === 13) {
@@ -41,7 +41,7 @@ loginForm.addEventListener('keydown', (evt) => {
         enterButton.textContent = userName.value;
         userName.value = '';
     }
-})
+});
 
 // Показ имени в кнопке входа и приветствии при загрузке 
 // (для local storage)
@@ -54,5 +54,5 @@ window.addEventListener('load', () => {
         greetingsName.textContent = localStorage.getItem('name') + ',';
         enterButton.textContent = localStorage.getItem('name');
     }
-})
+});
 
