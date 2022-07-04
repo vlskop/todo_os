@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task OS</title>
     <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="preload" href="/main-bg.jpg" as="image">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="calendarStyle.css">
 </head>
@@ -88,28 +89,39 @@
             </div>
         </div>
         <div class="todo-field">
-            <p class="todo-title">Мои задачи</p>
-            <div class="active-tasks">
-                <p class="text-active">Активные</p>
-                <form method="post">
+            <p class="todo-title">МОИ ЗАДАЧИ</p>
+            <div class="tasks active">
+                <p class="task-title">Активные</p>
+                <form method="post" class="new-item-form">
                     <input type="text" class="task-text" placeholder="Добавьте новую задачу" required>
                     <button type="submit" class="add-task-btn">+</button>
                 </form>
-            <div class="task-list">
                 <template id="task-template">
                     <div class="new-task">
                         <p class="task-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed
                             interdum dui, in ullamcorper dolor. </p>
-                        <input type="checkbox" class="done-checkbox" id="done-checkbox">
-                        <label for="done-checkbox"></label>
+                        <label>
+                            <input type="checkbox" class="done-checkbox" id="done-checkbox">
+                        </label>
                     </div>
                 </template>
+                <div class="task-list">
+                </div>
             </div>
+            <div class="tasks done">
+                <p class="task-title">Выполненные</p>
+                <template id="task-template">
+                    <div class="new-task">
+                        <p class="task-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed
+                            interdum dui, in ullamcorper dolor. </p>
+                    </div>
+                </template>
+                <div class="task-list">
+                </div>
             </div>
-            <div class="done-tasks"></div>
         </div>
         <div class="calc-field"></div>
-    </div>
+        </div>
 
 
     <!--СКРИПТЫ-->
