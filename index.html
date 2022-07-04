@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <span class="ver">v0.05b</span>
     <!-- ЗАГРУЗОЧНЫЙ ЭКРАН -->
     <div class='loading-screen'>
         <div class="loading-anim"></div>
@@ -25,9 +25,9 @@
 
         <!--ФОРМА ВХОДА-->
         <button type="submit" id="login-btn">Войти</button>
-        <form class="login-form hidden">
+        <form class="login-form hidden" name="login-form">
             <p style="color:white">Ваше имя:</p>
-            <input type="text" id="login-name" value="" required>
+            <input type="text" id="login-name" name='login-input' value="" required>
             <button type="submit" id="login-submit">Продолжить</button>
         </form>
 
@@ -50,7 +50,7 @@
 
         <!--ПРИВЕТСТВИЕ-->
         <div class="greetings">
-            <span>Привет,</span>
+            <span class="greet-time">Привет,</span>
             <span class="name" contenteditable="true"></span>
             <span> чем планируешь заняться сегодня?</span>
         </div>
@@ -117,6 +117,7 @@
                     </div>
                 </template>
                 <div class="task-list">
+                    <p class="empty-list-msg">Выполненных задач нет</p>
                 </div>
             </div>
         </div>
