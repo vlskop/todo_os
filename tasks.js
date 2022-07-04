@@ -8,40 +8,64 @@ let addTaskBtn = document.querySelector('.new-item-form'); // кнопка до�
 let doneField = document.querySelector('.done');
 let doneList = doneField.querySelector('.task-list');
 let doneItems = doneList.children;
+let emptyListMsg = doneList.querySelector('.empty-list-msg');
  
-if (doneItems.length === 0) {
-  let alarm = document.createElement('p');
-  alarm.classList.add('alarm');
-  alarm.textContent = 'Выполненных задач нет';
-  doneList.appendChild(alarm);
+let container = document.querySelector('.todo-field');
+
+let toggleEmptyMsg = () => {
+  if (doneItems.length > 1) {
+    emptyListMsg.classList.add('hidden');
+  }
 }
+
+let autoDeleteOverflow = () => {
+  if (doneItems.length > 10) {
+      doneItems[10].classList.add('getup');
+      setTimeout(function(){
+        doneItems[10].remove(); 
+      }, 300);
+        
+  }
+};
 
 // Обработчик чекбоксов на удаление элементов
 let addCheckHandler = function (item) {
   let checkbox = item.querySelector('.done-checkbox');
   checkbox.addEventListener('change', function () {
     
-    item.classList.add('getup');
     item.classList.remove('getdown');
+    item.classList.add('getup');
    
     setTimeout(function() {
+      let replaced = item.cloneNode(true);
+      replaced.classList.remove('getup');
+      replaced.classList.add('getdown');
+      let checkboxOut = replaced.querySelector('label');
+      checkboxOut.classList.add('hidden');
+      replaced.querySelector('.task-content').style.width = '90%';
+      doneList.prepend(replaced);
+      autoDeleteOverflow();
+      toggleEmptyMsg();
       item.remove();
-    }, 500);
+    }, 250);
 
-    setInterval(function(){ // сохранение содержимого в localstorage
-      let session = taskList.innerHTML;
+      let session = container.innerHTML;
       localStorage.setItem('session', session);
-    }, 100);
 
   });
 };
 
 // Возврат данных из localStorage
 window.addEventListener('load', function(){
-  taskList.innerHTML = localStorage.getItem('session');
+  if (this.localStorage.getItem('session') == null) {
+    console.log('Нет сохранённых данных');
+  }
+  else {
+  container.innerHTML = localStorage.getItem('session');
   for (let i = 0; i < items.length; i++) { // добавляем обработчик чекбокса возвращённым элементам
     addCheckHandler(items[i]);
   }
+}
 });
 
 
@@ -61,18 +85,9 @@ addTaskBtn.onsubmit = function (evt) {
 
     taskList.appendChild(clonedElement); // вносим новую задачу в список
 
-    setInterval(function(){ // сохранение содержимого в localstorage
-      let session = taskList.innerHTML;
+      let session = container.innerHTML;
       localStorage.setItem('session', session);
-    }, 100);
 
     inputText.value = ''; // очистка поля ввода
   }
 };
-
-
-  
-
-
-
-

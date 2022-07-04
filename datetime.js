@@ -12,6 +12,9 @@ var months = [
     'октября',
     'декабря'
 ] // Месяцы
+
+let greetingAtTime = document.querySelector('.greet-time');
+
 window.onload = function () {
     setInterval(function () {
         // Seconds
@@ -37,5 +40,21 @@ window.onload = function () {
 
         var year = new Date().getFullYear();
         document.getElementById("year").innerHTML = year;
+
+        if (hours >= 6 && hours < 12) {
+            greetingAtTime.textContent = "Доброе утро,";
+        }
+        else if (hours >= 12 && hours < 17) {
+            greetingAtTime.textContent = "Добрый день,";
+        }
+        else if (hours >= 17 && hours < 21) {
+            greetingAtTime.textContent = "Добрый вечер,";
+        }
+        else if (hours >= 21 || hours < 6) {
+            greetingAtTime.textContent = "Доброй ночи,";
+        }
     }, 1000);
 }
+
+
+

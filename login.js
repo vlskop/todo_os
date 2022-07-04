@@ -3,6 +3,7 @@ let loginForm = document.querySelector('.login-form'); // Окошко вход�
 let loginButton = document.querySelector('#login-submit'); // Кнопка "Продолжить"
 let userName = document.querySelector('#login-name'); //Область ввода имени
 let greetingsName = document.querySelector('.name'); // Имя пользователя после "Привет," под часами
+let loginInput = loginForm.querySelector('#login-name'); // окно input
 
 // Работа кнопки войти
 enterButton.addEventListener('click', () => {
@@ -14,31 +15,27 @@ enterButton.addEventListener('click', () => {
     }
 });
 
-// Кнопка продолжить неактивна без имени пользователя
-userName.value.onchange = () => {
-    if (userName.value != "") {
-        loginButton.disabled = false;
-    }
-    else {
-        loginButton.disabled = true;  
-    }
-};
-
 // Работа кнопки Продолжить
 loginButton.addEventListener('click', () => {
+    if (userName.value.length == 0) {
+        console.log('Ошибка, нет имени пользователя');
+    }
+    else {
     greetingsName.textContent = userName.value + ',';
     localStorage.setItem('name', userName.value);
     loginForm.classList.add('hidden');
     enterButton.textContent = userName.value;
     userName.value = '';
+    }
 });
 // Вход по нажатию ENTER
-loginForm.addEventListener('keydown', (evt) => {
-    if (evt.keyCode === 13) {
+loginInput.addEventListener('keydown', (evt) => {
+    if (evt.keyCode == 13) {
+        evt.preventDefault();
         greetingsName.textContent = userName.value + ',';
+        enterButton.textContent = userName.value;
         localStorage.setItem('name', userName.value);
         loginForm.classList.add('hidden');
-        enterButton.textContent = userName.value;
         userName.value = '';
     }
 });

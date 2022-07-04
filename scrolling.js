@@ -14,6 +14,7 @@ downBtn.onclick = ()=> {
 // Возврат к экрану блокировки
 upBtn.onclick = ()=> {
     mainflow.classList.remove('hidden');
+    console.log('Нажата');
     setTimeout(() => {  
         workflow.classList.add('hidden'); 
     }, 1000);   
