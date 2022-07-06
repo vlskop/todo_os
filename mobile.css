@@ -1,0 +1,94 @@
+@media screen and (max-device-width: 768px) {
+
+    .hidden {
+        display: none;
+        opacity: 0;
+    }
+
+    .main {
+        max-height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center;
+    }
+
+    .weather {
+        min-width: 100%;
+        margin-left: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scroll {
+        min-height: 70px;
+        align-items: center;
+    }
+
+    .scroll p {
+        font-size: 24px;
+        max-width: 80%; 
+    }
+    
+    .login-form {
+        font-size: 20px;
+        min-height: 150px;
+        min-width: 300px;
+        background-color: black;
+        z-index: 1000;
+    }
+
+    #login-name {
+        min-height: 40px;
+        font-size: 20px;
+    }
+
+    #login-submit {
+        font-size: 20px;
+        background-color: #fff;
+        color: black;
+    }
+
+    .workflow-container {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        overflow: scroll;
+        height: 100vh;
+    }
+
+    .arrow-up {
+       position: absolute;
+       left: 300px;
+    }
+
+    label::before {
+        margin-right: 35px;
+    }
+
+    .new-task {
+        width: 100%;
+    }
+
+    .task-content {
+        width: 100;
+    }
+
+    .workflow-container:before {
+        background-size: cover;
+        height: 100%;
+    }
+
+    .calc-wrapper {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .btn {
+        min-width: 40px;
+    }
+    .del {
+        font-size: 18px;
+    }
+}
+
