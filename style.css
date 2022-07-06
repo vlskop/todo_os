@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&family=Russo+One&display=swap');
 
 /* ОБЩИЕ НАСТРОЙКИ */
 * {
@@ -8,6 +9,8 @@
     font-family: 'Rubik', sans-serif;
     scroll-behavior: smooth;
     overflow: hidden;
+    user-select: none;
+    outline: 0;
 }
 
 .hidden {
@@ -225,6 +228,7 @@ body {
     color: white;
     font-size: 20px;
     filter: drop-shadow(0px 0 2px rgba(0, 0, 0, 0.856));
+    cursor: pointer;
 }
 
 
@@ -296,6 +300,7 @@ body {
 .workfield {
     height: fit-content;
 }
+
 /*КНОПКА ВОЗВРАТА НА НАЧАЛЬНЫЙ ЭКРАН*/
 .go-up {
     border: none;
@@ -309,8 +314,9 @@ body {
 .arrow-up {
     width: 15px;
     transform: rotate(180deg);
-    left: 50%;
+    position: absolute;
     transition: 0.2s;
+    left: 50%;
 }
 
 .arrow-up:hover {
@@ -361,6 +367,7 @@ body {
 
 .workflow-apps li {
     padding: 25px 10px;
+    transition: 200ms;
 }
 
 .workflow-apps li:hover {
@@ -391,11 +398,11 @@ body {
     opacity: 1;
 }
 
-.todo-field > p {
+.todo-field>p {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 10px;
-    margin-top: 5px;
+    margin-top: 50px;
     color: white;
     filter: drop-shadow(0 0 5px black);
     margin-left: 10px;
@@ -405,7 +412,7 @@ body {
 }
 
 .app-switch-forward {
-    animation: switch-up 1s;
+    animation: switch-up 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
     margin-top: initial;
@@ -414,13 +421,13 @@ body {
 
 @keyframes switch-up {
     to {
-       margin-top: -500px;
-       opacity: 0; 
+        margin-top: -500px;
+        opacity: 0;
     }
 }
 
 .app-switch-backward {
-    animation: switch-down 1s;
+    animation: switch-down 1.5s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     margin-top: -500px;
@@ -429,8 +436,8 @@ body {
 
 @keyframes switch-down {
     to {
-       margin-top: inherit;
-       opacity: 1;
+        margin-top: inherit;
+        opacity: 1;
     }
 }
 
@@ -454,13 +461,6 @@ body {
     background-color: rgba(56, 235, 1, 0.5);
 }
 
-.alarm {
-    color: white;
-    font-size: 20px;
-    text-align: center;  
-    margin: 20px 0;
-}
-
 .task-title {
     font-size: 24px;
     margin: 10px 0 0 20px;
@@ -478,6 +478,8 @@ body {
     font-size: 16px;
     vertical-align: middle;
 }
+
+/*СООБЩЕНИЕ ДЛЯ ПУСТОГО СПИСКА ВЫПОЛНЕННЫХ*/
 
 .empty-list-msg {
     color: white;
@@ -502,12 +504,12 @@ body {
 
 .add-task-btn:hover {
     background-color: rgb(2, 189, 126, 0.8);
-    transform: scale(1.1);  
+    transform: scale(1.1);
 }
 
 .add-task-btn:active {
     background-color: rgb(2, 189, 126, 1);
-    transform: scale(1);  
+    transform: scale(1);
 }
 
 /*НОВАЯ ЗАДАЧА И АНИМАЦИЯ ПОЯВЛЕНИЯ*/
@@ -554,6 +556,7 @@ body {
         margin-top: -39px;
     }
 }
+
 .task-content {
     padding: 10px 10px;
     background-color: white;
@@ -570,7 +573,7 @@ body {
 label::before {
     content: "";
     z-index: 1000;
-    background-image:  url(tick-icon.png);
+    background-image: url(tick-icon.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 25px;
@@ -582,37 +585,91 @@ label::before {
     cursor: pointer;
 }
 
+/*КАЛЬКУЛЯТОР*/
+
 .calc-wrapper {
     background-color: #fff;
     width: 500px;
     height: fit-content;
+    width: fit-content;
     margin: auto;
-    margin-top: 400px;
+    margin-top: 300px;
     margin-bottom: 10px;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-gap: 5px;
+    padding: 10px;
+    background-color: rgba(14, 128, 235, 0.425);
+    border-radius: 10px;
+    filter: drop-shadow(0 0 2px rgba(2, 0, 0, 0.801));
 }
 
-.num {
-    background-color: blanchedalmond;
-    width: 80px;
-    height: 80px;
-    border: 1px solid black;
+.btn {
+    min-width: 60px;
+    min-height: 60px;
+    filter: drop-shadow(0 0 2px black);
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 100ms;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.func {
+    margin: 2px 2px;
+    background-color: rgba(170, 173, 172, 0.61);
+    color: white;
+    min-height: 65px;
+    min-width: 65px;
 }
 
 .screen {
     width: 95%;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px 10px;
+    min-height: 80px;
+    font-size: 40px;
+    background-color: white;
     margin: 10px auto;
+    grid-row: 1/1;
+    grid-column: 1/7;
+    border-radius: 10px;
+    text-align: right;
+    font-family: 'Russo One', serif;
+    letter-spacing: 2px;
+    overflow: hidden;
+}
 
+.del {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.negative {
+    grid-row: 4/5;
+}
+
+.clear {
+    grid-row: 5/6;
+}
+
+.zero {
+    grid-column: 2/4;
+}
+
+.equal {
+    grid-column: 5/7;
 }

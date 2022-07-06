@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <span class="ver">v0.05b</span>
+    <span class="ver">v0.09b</span>
     <!-- ЗАГРУЗОЧНЫЙ ЭКРАН -->
     <div class='loading-screen'>
         <div class="loading-anim"></div>
@@ -75,6 +75,7 @@
 
     <!--РАБОЧЕЕ ПРОСТРАНСТВО-->
     <div class="workflow-container hidden">
+        <!--МЕНЮ ПРИЛОЖЕНИЙ-->
         <div class="workflow-menu">
             <ul class="workflow-apps">
                 <li class="todo-toggle menu-active">Список дел</li>
@@ -88,7 +89,9 @@
                 <img class="weather-icon" src="" alt="">
             </div>
         </div>
+        <!--ПОЛЕ ПРИЛОЖЕНИЙ-->
         <div class="workfield">
+            <!--СПИСОК ДЕЛ-->
             <div class="todo-field">
                 <p class="todo-title">МОИ ЗАДАЧИ</p>
                 <div class="tasks active">
@@ -124,30 +127,32 @@
                     </div>
                 </div>
             </div>
+            <!--КАЛЬКУЛЯТОР-->
             <div class="calc-field">
                 <div class="calc-wrapper">
-                    <div class="screen"></div>
-                        <div class="num del">Bkspc</div>
-                        <div class="num seven">7</div>
-                        <div class="num eight">8</div>
-                        <div class="num nine">9</div>
-                        <div class="num divide">/</div>
-                        <div class="num sqrt"></div>
-                        <div class="num negative">+/-</div>
-                        <div class="num four">4</div>
-                        <div class="num five">5</div>
-                        <div class="num six">6</div>
-                        <div class="num multiply">x</div>
-                        <div class="num percent">%</div>
-                        <div class="num clear">C</div>
-                        <div class="num one">1</div>
-                        <div class="num two">2</div>
-                        <div class="num three">3</div>
-                        <div class="num plus">+</div>
-                        <div class="num minus">-</div>
-                        <div class="num zero">0</div>
-                        <div class="num dot">.</div>
-                        <div class="num equal">=</div>
+                    <input type="text" class="screen" readonly value="">
+                        <div class="btn del func">Bkspc</div>
+                        <div class="btn seven num">7</div>
+                        <div class="btn eight num">8</div>
+                        <div class="btn nine num">9</div>
+                        <div class="btn divide func">/</div>
+                        <div class="btn sqrt func">&#8730;</div>
+                        <div class="btn negative func">+/-</div>
+                        <div class="btn openbrckt func">(</div>
+                        <div class="btn four num">4</div>
+                        <div class="btn five num">5</div>
+                        <div class="btn six num">6</div>
+                        <div class="btn multiply func">x</div>
+                        <div class="btn closebrckt func">)</div>
+                        <div class="btn clear func">C</div>
+                        <div class="btn one num">1</div>
+                        <div class="btn two num">2</div>
+                        <div class="btn three num">3</div>
+                        <div class="btn plus func">+</div>
+                        <div class="btn minus func">-</div>
+                        <div class="btn zero num">0</div>
+                        <div class="btn dot num">.</div>
+                        <div class="btn equal func">=</div>
                 </div>
             </div>
 
@@ -163,6 +168,7 @@
     <script src="scrolling.js"></script>
     <script src="tasks.js"></script>
     <script src="switchapps.js"></script>
+    <script src="calc.js"></script>
 
 </body>
 
