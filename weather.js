@@ -2,10 +2,13 @@ window.addEventListener('load', () => { // При загрузке
   let long; // ширина
   let lat; // долгота
 
+
   let description = document.querySelector('.weather-description'); // переменная описания погоды
   let location = document.querySelectorAll('.location'); // местоположение
   let temperature = document.querySelectorAll('.temperature'); // температура
   let icon = document.querySelectorAll('.weather-icon'); // иконка
+  let cityId;
+
     for (let i = 0; i < temperature.length; i++) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => { // получение геолокации в браузере
@@ -24,8 +27,14 @@ window.addEventListener('load', () => { // При загрузке
             temperature[i].textContent = Math.round(data.main.temp) + '°'; // присваиваем температуру (округление вверх)
             let iconCode = data.weather[0].icon; // получаем код иконки
             icon[i].src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`; // задаем путь картинке через полученный код
+            cityId = data.id;
+            let weatherContainer = document.querySelector('.weather');
+            weatherContainer.onclick = () => {
+            window.open(`https://openweathermap.org/city/${cityId}`);
+            }
           });
       });
     } 
   };
   });   
+  

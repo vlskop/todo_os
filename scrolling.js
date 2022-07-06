@@ -6,7 +6,7 @@ let upBtn = document.querySelector('.arrow-up') // Кнопка вернутьс
 // При нажатии на начало работы
 downBtn.onclick = ()=> {
     workflow.classList.remove('hidden');
-    window.scrollTo(0, 1080);
+    window.scrollTo(0, mainflow.getBoundingClientRect().bottom);
     setTimeout(() => {
         mainflow.classList.add('hidden');
     }, 600); 
@@ -14,7 +14,6 @@ downBtn.onclick = ()=> {
 // Возврат к экрану блокировки
 upBtn.onclick = ()=> {
     mainflow.classList.remove('hidden');
-    console.log('Нажата');
     setTimeout(() => {  
         workflow.classList.add('hidden'); 
     }, 1000);   

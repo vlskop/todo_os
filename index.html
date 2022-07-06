@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <span class="ver">v0.05b</span>
+    <span class="ver">v0.09b</span>
     <!-- ЗАГРУЗОЧНЫЙ ЭКРАН -->
     <div class='loading-screen'>
         <div class="loading-anim"></div>
@@ -75,6 +75,7 @@
 
     <!--РАБОЧЕЕ ПРОСТРАНСТВО-->
     <div class="workflow-container hidden">
+        <!--МЕНЮ ПРИЛОЖЕНИЙ-->
         <div class="workflow-menu">
             <ul class="workflow-apps">
                 <li class="todo-toggle menu-active">Список дел</li>
@@ -88,41 +89,75 @@
                 <img class="weather-icon" src="" alt="">
             </div>
         </div>
-        <div class="todo-field">
-            <p class="todo-title">МОИ ЗАДАЧИ</p>
-            <div class="tasks active">
-                <p class="task-title">Активные</p>
-                <form method="post" class="new-item-form">
-                    <input type="text" class="task-text" placeholder="Добавьте новую задачу" required>
-                    <button type="submit" class="add-task-btn">+</button>
-                </form>
-                <template id="task-template">
-                    <div class="new-task">
-                        <p class="task-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed
-                            interdum dui, in ullamcorper dolor. </p>
-                        <label>
-                            <input type="checkbox" class="done-checkbox" id="done-checkbox">
-                        </label>
+        <!--ПОЛЕ ПРИЛОЖЕНИЙ-->
+        <div class="workfield">
+            <!--СПИСОК ДЕЛ-->
+            <div class="todo-field">
+                <p class="todo-title">МОИ ЗАДАЧИ</p>
+                <div class="tasks active">
+                    <p class="task-title">Активные</p>
+                    <form method="post" class="new-item-form">
+                        <input type="text" class="task-text" placeholder="Добавьте новую задачу" required>
+                        <button type="submit" class="add-task-btn">+</button>
+                    </form>
+                    <template id="task-template">
+                        <div class="new-task">
+                            <p class="task-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+                                sed
+                                interdum dui, in ullamcorper dolor. </p>
+                            <label>
+                                <input type="checkbox" class="done-checkbox" id="done-checkbox">
+                            </label>
+                        </div>
+                    </template>
+                    <div class="task-list">
                     </div>
-                </template>
-                <div class="task-list">
+                </div>
+                <div class="tasks done">
+                    <p class="task-title">Выполненные</p>
+                    <template id="task-template">
+                        <div class="new-task">
+                            <p class="task-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+                                sed
+                                interdum dui, in ullamcorper dolor. </p>
+                        </div>
+                    </template>
+                    <div class="task-list">
+                        <p class="empty-list-msg">Выполненных задач нет</p>
+                    </div>
                 </div>
             </div>
-            <div class="tasks done">
-                <p class="task-title">Выполненные</p>
-                <template id="task-template">
-                    <div class="new-task">
-                        <p class="task-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed
-                            interdum dui, in ullamcorper dolor. </p>
-                    </div>
-                </template>
-                <div class="task-list">
-                    <p class="empty-list-msg">Выполненных задач нет</p>
+            <!--КАЛЬКУЛЯТОР-->
+            <div class="calc-field">
+                <div class="calc-wrapper">
+                    <input type="text" class="screen" readonly value="">
+                        <div class="btn del func">Bkspc</div>
+                        <div class="btn seven num">7</div>
+                        <div class="btn eight num">8</div>
+                        <div class="btn nine num">9</div>
+                        <div class="btn divide func">/</div>
+                        <div class="btn sqrt func">&#8730;</div>
+                        <div class="btn negative func">+/-</div>
+                        <div class="btn openbrckt func">(</div>
+                        <div class="btn four num">4</div>
+                        <div class="btn five num">5</div>
+                        <div class="btn six num">6</div>
+                        <div class="btn multiply func">x</div>
+                        <div class="btn closebrckt func">)</div>
+                        <div class="btn clear func">C</div>
+                        <div class="btn one num">1</div>
+                        <div class="btn two num">2</div>
+                        <div class="btn three num">3</div>
+                        <div class="btn plus func">+</div>
+                        <div class="btn minus func">-</div>
+                        <div class="btn zero num">0</div>
+                        <div class="btn dot num">.</div>
+                        <div class="btn equal func">=</div>
                 </div>
             </div>
+
         </div>
-        <div class="calc-field"></div>
-        </div>
+    </div>
 
 
     <!--СКРИПТЫ-->
@@ -132,6 +167,8 @@
     <script src="login.js"></script>
     <script src="scrolling.js"></script>
     <script src="tasks.js"></script>
+    <script src="switchapps.js"></script>
+    <script src="calc.js"></script>
 
 </body>
 
