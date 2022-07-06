@@ -91,3 +91,5 @@ addTaskBtn.onsubmit = function (evt) {
     inputText.value = ''; // очистка поля ввода
   }
 };
+
+localStorage.clear();
