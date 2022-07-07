@@ -1,5 +1,6 @@
 let menu = document.querySelector('.workflow-apps'); // меню
 let menuBtns = menu.children; // элементы меню
+let mobileMenuBtn = document.querySelector('.mobile-menu'); // кнопка меню в мобильном режиме
 
 let workfield = document.querySelector('.workfield'); // рабочее пространство
 let workfieldElements = workfield.children; // элементы рабочего пространства
@@ -41,10 +42,12 @@ let pressChecker = function (button) {
     };
 }
 
-
+// применение обработчика клика на все элементы
 for (let i = 0; i < menuBtns.length; i++) {
     pressChecker(menuBtns[i]);
 }
+
+
 
 // добавление обработчика при загрузке страницы
 window.addEventListener('load', function () {

@@ -168,11 +168,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
-    padding-top: 150px;
+    padding-top: 0;
 }
 
 .clock {
-    margin: auto;
+    margin: 150px auto 0 auto;
     width: 350px;
     text-align: center;
     color: #fff;
