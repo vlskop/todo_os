@@ -1,6 +1,5 @@
 let menu = document.querySelector('.workflow-apps'); // меню
 let menuBtns = menu.children; // элементы меню
-let mobileMenuBtn = document.querySelector('.mobile-menu'); // кнопка меню в мобильном режиме
 
 let workfield = document.querySelector('.workfield'); // рабочее пространство
 let workfieldElements = workfield.children; // элементы рабочего пространства
@@ -20,7 +19,7 @@ let indexChecker = function () {
                 workfieldElements[index].classList.remove('hidden');
             }, 600);
 
-        } else {
+        } if (!activeParent.children[k].classList.contains('menu-active')) {
             workfieldElements[k].classList.add('app-switch-forward');
             workfieldElements[k].classList.remove('app-switch-backward');
             setTimeout(() => {

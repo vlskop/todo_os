@@ -2,24 +2,27 @@ let loadingScreen = document.querySelector('.loading-screen'); // Загрузо
 let mainScreen = document.querySelector('.main'); // Экран блокировки
 let mainChildren = mainScreen.children; // Дочерние элементы экрана блокировки
 
+let clockScript = document.querySelector('[src$="datetime.js"]');
 
+mainScreen.classList.add('hidden');
 
-for (let i = 0; i < mainChildren.length; i++) {
-    mainChildren[i].classList.add('hidden'); // Всем дочерним элементам задал невидимость
+window.addEventListener('load', function() {
+    if (this.document.readyState == 'complete') {
 
-    setTimeout(function(){
-        loadingScreen.classList.add('disappear'); // Через 2,5 сек исчезает анимация загрузки
-    }, 2500);
+    setTimeout(() => {
+        loadingScreen.classList.add('disappear');
+        
+    }, 1000);
 
-    setTimeout(function(){ // Через 4,5 сек:
-        loadingScreen.classList.add('hidden'); // Невидимость загрузочного экрана 
-        if (mainChildren[i].classList.contains('login-form')) { // Исключение из правила для окна логина
-            mainChildren[i].classList.add('hidden');
-        }
-        else {
-        mainChildren[i].classList.remove('hidden'); // Остальным убрал невидимость
-        mainChildren[i].classList.add('appear'); // Плавное появление
+    setTimeout(() => {
+        loadingScreen.classList.add('disappear');
+        mainScreen.classList.add('appear');  
+    }, 1500);
+  
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+        mainScreen.classList.remove('hidden');
+    }, 1500);
+    }
+});
 
-        }
-    }, 4500);
-}
