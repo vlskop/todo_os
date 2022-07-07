@@ -14,6 +14,7 @@ downBtn.onclick = ()=> {
 // Возврат к экрану блокировки
 upBtn.onclick = ()=> {
     mainflow.classList.remove('hidden');
+    window.scrollTo(0, 0);
     setTimeout(() => {  
         workflow.classList.add('hidden'); 
     }, 1000);   
