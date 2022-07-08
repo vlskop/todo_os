@@ -19,7 +19,7 @@ let indexChecker = function () {
                 workfieldElements[index].classList.remove('hidden');
             }, 600);
 
-        } else {
+        } if (!activeParent.children[k].classList.contains('menu-active')) {
             workfieldElements[k].classList.add('app-switch-forward');
             workfieldElements[k].classList.remove('app-switch-backward');
             setTimeout(() => {
@@ -41,10 +41,12 @@ let pressChecker = function (button) {
     };
 }
 
-
+// применение обработчика клика на все элементы
 for (let i = 0; i < menuBtns.length; i++) {
     pressChecker(menuBtns[i]);
 }
+
+
 
 // добавление обработчика при загрузке страницы
 window.addEventListener('load', function () {
