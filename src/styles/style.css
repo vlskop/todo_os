@@ -32,14 +32,6 @@
     z-index: -1000;
 }
 
-.ver {
-    position: fixed;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 12px;
-}
-
-
 /* ЗАГРУЗКА СТРАНИЦЫ*/
 .loading-screen {
     height: 100vh;
@@ -51,12 +43,11 @@
     height: 100%;
     position: absolute;
     text-align: center;
-    color: white;
+    color: rgb(155, 30, 30);
     font-size: 48px;
     font-weight: bold;
     padding-top: 150px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: linear-gradient(rgba(194, 194, 194, 0.84), rgba(204, 204, 204, 0.815));
 }
 
 .loading-anim {
@@ -65,9 +56,8 @@
     animation-fill-mode: forwards;
     width: 60px;
     height: 60px;
-    background-color: transparent;
     margin: 25% auto;
-    border: 2px solid white;
+    border: 2px solid rgb(99, 0, 0);
     border-bottom: none;
     border-left: none;
     border-top: none;
@@ -80,7 +70,7 @@
     }
 
     50% {
-        background-color: rgba(255, 255, 255, 0.37);
+        background-color: rgba(216, 9, 9, 0.37);
     }
 
     to {
@@ -576,7 +566,7 @@
 label::before {
     content: "";
     z-index: 1000;
-    background-image: url('../assets/main-bg.png');
+    background-image: url('../assets/tick-icon.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 25px;
