@@ -34,7 +34,7 @@ module.exports = {
 
    output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, 'gh-pages'),
+    path: path.resolve(__dirname, 'docs'),
     assetModuleFilename: 'assets/[name][ext]'
    }
 
