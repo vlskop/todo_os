@@ -1,3 +1,4 @@
+
 let screen = document.querySelector('.screen');
 let numbers = document.querySelectorAll('.num');
 let funcs = document.querySelectorAll('.func');
@@ -78,5 +79,3 @@ for (let i = 0; i < numbers.length; i++) {
 for (let i = 0; i < funcs.length; i++) {
     inputFuncs(funcs[i]);
 }
-
-

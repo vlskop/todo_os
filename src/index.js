@@ -1,0 +1,6 @@
+import './styles/style.css'
+import './styles/mobile.css'
+import './assets/main-bg.png'
+import './assets/tick-icon.png'
+import './assets/favicon.png'
+import './assets/arrow-down-solid.svg'
