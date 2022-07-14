@@ -1,0 +1,54 @@
+
+@media screen and (max-device-width: 820px) {
+
+
+.greetings {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.scroll {
+    height: 50px;
+    align-self: start;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.61);
+    background-color: rgba(0, 0, 0, 0.329);
+}
+
+.weather {
+    padding: 10px 0;
+}
+
+.arrow-up {
+    position: absolute;
+    left: 70%
+}
+
+.workflow-container {
+    overflow-y: visible;
+}
+
+.new-task {
+    width: 100%;
+    justify-content: start;
+    align-content: center;
+}
+
+
+label {
+    width: 30px;
+    height: 30px;
+    margin-left: 5%;
+}
+
+.calc-wrapper {
+width: 95%;
+}
+
+.btn {
+    font-size: 20px;
+    min-width: fit-content;
+}
+
+}
