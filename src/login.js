@@ -40,18 +40,9 @@ loginInput.addEventListener('keydown', (evt) => {
     }
 });
 
-function hideAddressBar() {
-    if (navigator.userAgent.match(/Android/i) != null) {
-        //window.orientation 0 - 180 - landscape; 90 and -90 portrait
-        document.documentElement.style.height = window.outerHeight + 'px';
-        setTimeout(window.scrollTo(0, 1), 0);
-    }
-}
-
 // Показ имени в кнопке входа и приветствии при загрузке 
 // (для local storage)
 window.addEventListener('load', () => {
-    hideAddressBar()
     if (localStorage.getItem('name') === "" || localStorage.getItem('name') === null) {
         greetingsName.textContent = '';
         enterButton.textContent = 'Войти';
@@ -61,4 +52,3 @@ window.addEventListener('load', () => {
         enterButton.textContent = localStorage.getItem('name');
     }
 });
-

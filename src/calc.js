@@ -8,12 +8,17 @@ let input = '';
 
 let inputNums = function(button) {
     button.onclick = function() {
+        if (input == '' && button.textContent == 0) {
+
+        }
+        else {
         input += button.textContent;
-        console.log(input);
+        console.log(input[0]);
         screen.value = input;
         if (input.length > 14) {
             screen.value = 'ERROR';
         }
+        }   
     }
 }
 

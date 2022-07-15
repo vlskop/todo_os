@@ -9,11 +9,10 @@
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
     scroll-behavior: smooth;
-    overflow: hidden;
     user-select: none;
     outline: 0;
+    overflow: hidden;
 }
-
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -27,20 +26,18 @@
 .hidden {
     display: none;
     opacity: 0;
-    height: 0;
     position: absolute;
+    height: 0;
+    top: 0;
     z-index: -1000;
 }
 
 /* ЗАГРУЗКА СТРАНИЦЫ*/
-.loading-screen {
-    height: 100vh;
-}
 
 .loading-screen {
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     text-align: center;
     color: rgb(155, 30, 30);
@@ -284,15 +281,11 @@
 
 /* РАБОЧЕЕ ПРОСТРАНСТВО */
 .workflow-container {
-    min-height: 100vh;
     background-image: url('../assets/main-bg.png');
     background-size: cover;
     background-position: 50% 0;
-}
-
-
-.workfield {
-    min-height: fit-content;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: visible;
 }
 
 /*КНОПКА ВОЗВРАТА НА НАЧАЛЬНЫЙ ЭКРАН*/
@@ -357,13 +350,13 @@
     display: flex;
     cursor: pointer;
     height: 50px;
-    align-items: center;
+    align-content: center;
 }
 
 .workflow-apps li {
     transition: 200ms;
-    padding: 100% 10px;
-    
+    padding: 15px;
+    align-self: center;
 }
 
 .workflow-apps li:hover {
@@ -383,7 +376,6 @@
 
 .todo-field {
     width: 100vw;
-    height: fit-content;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -591,15 +583,13 @@ label::before {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 10px;
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, auto);
     grid-gap: 5px;
     padding: 10px;
-    background-color: rgba(14, 128, 235, 0.425);
+    background: linear-gradient(180deg, rgba(255,255,255,0.7) 10%, rgba(255,255,255,0) 60%);
     border-radius: 10px;
-    filter: drop-shadow(0 0 2px rgba(2, 0, 0, 0.801));
 }
 
 .btn {
@@ -627,7 +617,7 @@ label::before {
 
 .func {
     margin: 2px 2px;
-    background-color: rgba(170, 173, 172, 0.61);
+    background-color: rgba(19, 19, 19, 0.61);
     color: white;
     min-height: 65px;
     min-width: 65px;
@@ -638,15 +628,16 @@ label::before {
     padding: 15px 10px;
     min-height: 80px;
     font-size: 40px;
-    background-color: white;
     margin: 10px auto;
     grid-row: 1/1;
     grid-column: 1/7;
-    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.589);
     text-align: right;
     font-family: 'Russo One', serif;
     letter-spacing: 2px;
     overflow: hidden;
+    background-color: transparent;
 }
 
 .del {
